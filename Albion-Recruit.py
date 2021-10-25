@@ -255,6 +255,7 @@ def main():
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
     bung = True
     first = True
+    time_start = datetime.datetime.now()
     while bung == True:
         if first:
             msg = assemble_msg2(msg_code2())
@@ -286,7 +287,7 @@ def main():
             if not sent:
                 invite(user)
                 sent_list.append(user)
-        #another version of the few lines of code after it. no idea why it didnt work. I just redid it in a different order and it worked so idk
+        #a1
         # for user in user_list:
         #     print(user,':',user_list)
         #     sent = False
@@ -310,13 +311,16 @@ def main():
         duration = time2 - time1
         duration = duration.total_seconds()
         if int(duration2) >= randomizer(10):
-            print(duration)
+            print(str(int(duration))+' Seconds')
             time21 = datetime.datetime.now()
         if int(duration) >= randomizer(31):
             msg = assemble_msg2(msg_code2())
             type_msg(msg)
             print('ad sent!',msg)
-            usr_list_msg = 'Invited '+str(len(user_list))+' : '
+            time_now = datetime.datetime.now()
+            duration = time_now - time_start
+            duration = duration.total_seconds()
+            usr_list_msg = 'After '+str(int(duration))+' Seconds Invited '+str(len(user_list))+' : '
             for user in user_list:
                 user_ap = user + ', '
                 usr_list_msg += user_ap
