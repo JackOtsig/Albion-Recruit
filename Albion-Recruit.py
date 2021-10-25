@@ -1,3 +1,4 @@
+#IMPORTANT make sure to change the coordinates to fit your screen, any line that needs changing is marked with a #coords
 import random,mouse,pyautogui,datetime,os,pytesseract,re,keyboard,time,win32api,win32con
 from PIL import Image
 #GUILD NAME!!! CHANGE THIS TO YOUR GUILD!
